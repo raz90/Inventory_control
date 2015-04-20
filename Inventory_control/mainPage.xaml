@@ -36,13 +36,15 @@
             <TabItem x:Name="RegisterTab" Header="Register" FontSize="36">
                 <Grid Background="#FFE5E5E5">
                     <Button x:Name="Supp_register" Content="Register Supplier" HorizontalAlignment="Left" Margin="179,117,0,0" VerticalAlignment="Top" Width="297" Height="79" Background="#FFEAFFFF" Click="Supp_register_Click"/>
+                    <Button x:Name="RegisterUser" Content="RegisterUser" HorizontalAlignment="Left" Margin="536,117,0,0" VerticalAlignment="Top" Width="294" Height="79" Click="RegisterUser_Click"/>
+                    <Button x:Name="regCompany" Content="Register Company" HorizontalAlignment="Left" Margin="179,246,0,0" VerticalAlignment="Top" Width="297" Height="73" Click="regCompany_Click"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="ReportTab" Header="Report" FontSize="36">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
             <TabItem x:Name="SettingTab" Header="Setting" FontSize="36">
-            <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5"/>
             </TabItem>
             <TabItem x:Name="HelpTab" Header="Help" FontSize="36">
                 <Grid Background="#FFE5E5E5" Margin="0,0,-2,-2" Height="737" VerticalAlignment="Bottom"/>

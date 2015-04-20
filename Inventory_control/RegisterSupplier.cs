@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Inventory_control
 {
@@ -31,5 +32,36 @@ namespace Inventory_control
             this.supplierTableAdapter.Fill(this.inventory_controlDataSet.supplier);
 
         }
+
+      
+        
+
+        private void fillToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.supplierTableAdapter.Fill(this.inventory_controlDataSet.supplier);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void searchByIdToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.supplierTableAdapter.searchById(this.inventory_controlDataSet.supplier, paraIdSuppToolStripTextBox.Text);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+       
     }
 }

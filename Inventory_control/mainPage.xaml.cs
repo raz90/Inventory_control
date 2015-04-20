@@ -41,5 +41,19 @@ namespace Inventory_control
             suppReg = new RegisterSupplier();
             suppReg.Show();
         }
+
+        private void RegisterUser_Click(object sender, RoutedEventArgs e)
+        {
+            UserRegister userReg;
+            userReg = new UserRegister();
+            userReg.Show();
+        }
+
+        private void regCompany_Click(object sender, RoutedEventArgs e)
+        {
+            CompanyRegister comReg;
+            comReg = new CompanyRegister();
+            comReg.Show();
+        }
     }
 }

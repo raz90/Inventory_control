@@ -205,7 +205,7 @@
             this.customerBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.customerBindingNavigator.Name = "customerBindingNavigator";
             this.customerBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.customerBindingNavigator.Size = new System.Drawing.Size(1023, 25);
+            this.customerBindingNavigator.Size = new System.Drawing.Size(1090, 25);
             this.customerBindingNavigator.TabIndex = 0;
             this.customerBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -424,7 +424,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1023, 357);
+            this.ClientSize = new System.Drawing.Size(1090, 385);
             this.Controls.Add(this.customerDataGridView);
             this.Controls.Add(idcustomerLabel);
             this.Controls.Add(this.idcustomerTextBox);

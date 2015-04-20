@@ -25,6 +25,7 @@ namespace Inventory_control
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
         private void Login_button_Click(object sender, RoutedEventArgs e)
@@ -33,10 +34,10 @@ namespace Inventory_control
             {
                 string connectSql = "Server=localhost;Port=3306;Database=inventory_control;uid=root;password=29554676";
                 MySqlConnection conn = new MySqlConnection(connectSql);
-
+                string pass= password_box.Password;
 
                 //string querySelect = 
-                MySqlCommand comd = new MySqlCommand("Select * from user where username ='" + this.username_box.Text + "'and password ='" + this.password_box.Text + "';", conn);
+                MySqlCommand comd = new MySqlCommand("Select * from user where username ='" + this.username_box.Text + "'and password ='" +pass+ "';", conn);
 
                 MySqlDataReader myReader;
 

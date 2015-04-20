@@ -15,6 +15,8 @@ namespace Inventory_control
         public UserRegister()
         {
             InitializeComponent();
+            companyIDComboBox.DataSource = inventory_controlDataSet.Tables["companydata"];
+            companyIDComboBox.DisplayMember = "idCompanyData";
         }
 
         private void userBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -29,6 +31,28 @@ namespace Inventory_control
         {
             // TODO: This line of code loads data into the 'inventory_controlDataSet.user' table. You can move, or remove it, as needed.
             this.userTableAdapter.Fill(this.inventory_controlDataSet.user);
+            // TODO: This line of code loads data into the 'inventory_controlDataSet.user' table. You can move, or remove it, as needed.
+            this.userTableAdapter.Fill(this.inventory_controlDataSet.user);
+            // TODO: This line of code loads data into the 'inventory_controlDataSet.user' table. You can move, or remove it, as needed.
+            this.userTableAdapter.Fill(this.inventory_controlDataSet.user);
+            // TODO: This line of code loads data into the 'inventory_controlDataSet.companydata' table. You can move, or remove it, as needed.
+            this.companydataTableAdapter.Fill(this.inventory_controlDataSet.companydata);
+            
+            // TODO: This line of code loads data into the 'inventory_controlDataSet.user' table. You can move, or remove it, as needed.
+            this.userTableAdapter.Fill(this.inventory_controlDataSet.user);
+
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.companydataTableAdapter.FillBy(this.inventory_controlDataSet.companydata);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
 
         }
     }
