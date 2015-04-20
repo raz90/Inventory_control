@@ -1,0 +1,55 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Inventory_control" x:Class="Inventory_control.mainPage"
+        Title="mainPage" Height="850.249" Width="1416.446" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:inventory_controlDataSet x:Key="inventory_controlDataSet"/>
+        <CollectionViewSource x:Key="supplierViewSource" Source="{Binding supplier, Source={StaticResource inventory_controlDataSet}}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource supplierViewSource}" Margin="0,0,0,-2">
+        <TabControl HorizontalAlignment="Left" Height="799" VerticalAlignment="Top" Width="1398" Background="#FFE2E2E2" SelectedIndex="{Binding idSupplier, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}">
+            <TabItem x:Name="SalesTab" Header="Sales" FontSize="36">
+                <Grid Background="#FFDDF0F3" Margin="10,4,17,0" Height="721" VerticalAlignment="Top">
+                    <TabControl HorizontalAlignment="Left" Height="701" Margin="10,10,0,0" VerticalAlignment="Top" Width="1345">
+                        <TabItem Header="TabItem">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                        <TabItem Header="TabItem">
+                            <Grid Background="#FFE5E5E5"/>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="PurchaseTab" Header="Purchase" FontSize="36">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem x:Name="BillTab" Header="Bills" FontSize="36" HorizontalAlignment="Left" Width="78">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem x:Name="payableTab" Header="payable" FontSize="36">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem x:Name="FinancialTab" Header="Financial" FontSize="36">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem x:Name="RegisterTab" Header="Register" FontSize="36">
+                <Grid Background="#FFE5E5E5">
+                    <Button x:Name="Supp_register" Content="Register Supplier" HorizontalAlignment="Left" Margin="179,117,0,0" VerticalAlignment="Top" Width="297" Height="79" Background="#FFEAFFFF" Click="Supp_register_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="ReportTab" Header="Report" FontSize="36">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem x:Name="SettingTab" Header="Setting" FontSize="36">
+            <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem x:Name="HelpTab" Header="Help" FontSize="36">
+                <Grid Background="#FFE5E5E5" Margin="0,0,-2,-2" Height="737" VerticalAlignment="Bottom"/>
+            </TabItem>
+
+
+        </TabControl>
+
+    </Grid>
+</Window>
