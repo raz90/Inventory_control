@@ -39,8 +39,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterSupplier));
             this.supplierBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.inventory_controlDataSet = new Inventory_control.inventory_controlDataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -60,6 +58,10 @@
             this.fax_noTextBox = new System.Windows.Forms.TextBox();
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.supplierDataGridView = new System.Windows.Forms.DataGridView();
+            this.searchByIdToolStrip = new System.Windows.Forms.ToolStrip();
+            this.paraIdSuppToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.paraIdSuppToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.searchByIdToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,12 +69,10 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inventory_controlDataSet = new Inventory_control.inventory_controlDataSet();
             this.supplierTableAdapter = new Inventory_control.inventory_controlDataSetTableAdapters.supplierTableAdapter();
             this.tableAdapterManager = new Inventory_control.inventory_controlDataSetTableAdapters.TableAdapterManager();
-            this.searchByIdToolStrip = new System.Windows.Forms.ToolStrip();
-            this.paraIdSuppToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.paraIdSuppToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.searchByIdToolStripButton = new System.Windows.Forms.ToolStripButton();
             idSupplierLabel = new System.Windows.Forms.Label();
             supplierNameLabel = new System.Windows.Forms.Label();
             supp_company_nameLabel = new System.Windows.Forms.Label();
@@ -82,10 +82,10 @@
             emailLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingNavigator)).BeginInit();
             this.supplierBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventory_controlDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierDataGridView)).BeginInit();
             this.searchByIdToolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventory_controlDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // idSupplierLabel
@@ -189,16 +189,6 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // supplierBindingSource
-            // 
-            this.supplierBindingSource.DataMember = "supplier";
-            this.supplierBindingSource.DataSource = this.inventory_controlDataSet;
-            // 
-            // inventory_controlDataSet
-            // 
-            this.inventory_controlDataSet.DataSetName = "inventory_controlDataSet";
-            this.inventory_controlDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
@@ -359,6 +349,37 @@
             this.supplierDataGridView.Size = new System.Drawing.Size(557, 220);
             this.supplierDataGridView.TabIndex = 15;
             // 
+            // searchByIdToolStrip
+            // 
+            this.searchByIdToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.paraIdSuppToolStripLabel,
+            this.paraIdSuppToolStripTextBox,
+            this.searchByIdToolStripButton});
+            this.searchByIdToolStrip.Location = new System.Drawing.Point(0, 25);
+            this.searchByIdToolStrip.Name = "searchByIdToolStrip";
+            this.searchByIdToolStrip.Size = new System.Drawing.Size(872, 25);
+            this.searchByIdToolStrip.TabIndex = 20;
+            this.searchByIdToolStrip.Text = "searchByIdToolStrip";
+            // 
+            // paraIdSuppToolStripLabel
+            // 
+            this.paraIdSuppToolStripLabel.Name = "paraIdSuppToolStripLabel";
+            this.paraIdSuppToolStripLabel.Size = new System.Drawing.Size(75, 22);
+            this.paraIdSuppToolStripLabel.Text = "Search by ID ";
+            // 
+            // paraIdSuppToolStripTextBox
+            // 
+            this.paraIdSuppToolStripTextBox.Name = "paraIdSuppToolStripTextBox";
+            this.paraIdSuppToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            // 
+            // searchByIdToolStripButton
+            // 
+            this.searchByIdToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.searchByIdToolStripButton.Name = "searchByIdToolStripButton";
+            this.searchByIdToolStripButton.Size = new System.Drawing.Size(46, 22);
+            this.searchByIdToolStripButton.Text = "Search";
+            this.searchByIdToolStripButton.Click += new System.EventHandler(this.searchByIdToolStripButton_Click);
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "idSupplier";
@@ -401,6 +422,16 @@
             this.dataGridViewTextBoxColumn7.HeaderText = "Email";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
+            // supplierBindingSource
+            // 
+            this.supplierBindingSource.DataMember = "supplier";
+            this.supplierBindingSource.DataSource = this.inventory_controlDataSet;
+            // 
+            // inventory_controlDataSet
+            // 
+            this.inventory_controlDataSet.DataSetName = "inventory_controlDataSet";
+            this.inventory_controlDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // supplierTableAdapter
             // 
             this.supplierTableAdapter.ClearBeforeFill = true;
@@ -423,37 +454,6 @@
             this.tableAdapterManager.supplierTableAdapter = this.supplierTableAdapter;
             this.tableAdapterManager.UpdateOrder = Inventory_control.inventory_controlDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.userTableAdapter = null;
-            // 
-            // searchByIdToolStrip
-            // 
-            this.searchByIdToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.paraIdSuppToolStripLabel,
-            this.paraIdSuppToolStripTextBox,
-            this.searchByIdToolStripButton});
-            this.searchByIdToolStrip.Location = new System.Drawing.Point(0, 25);
-            this.searchByIdToolStrip.Name = "searchByIdToolStrip";
-            this.searchByIdToolStrip.Size = new System.Drawing.Size(872, 25);
-            this.searchByIdToolStrip.TabIndex = 20;
-            this.searchByIdToolStrip.Text = "searchByIdToolStrip";
-            // 
-            // paraIdSuppToolStripLabel
-            // 
-            this.paraIdSuppToolStripLabel.Name = "paraIdSuppToolStripLabel";
-            this.paraIdSuppToolStripLabel.Size = new System.Drawing.Size(70, 22);
-            this.paraIdSuppToolStripLabel.Text = "paraIdSupp:";
-            // 
-            // paraIdSuppToolStripTextBox
-            // 
-            this.paraIdSuppToolStripTextBox.Name = "paraIdSuppToolStripTextBox";
-            this.paraIdSuppToolStripTextBox.Size = new System.Drawing.Size(100, 25);
-            // 
-            // searchByIdToolStripButton
-            // 
-            this.searchByIdToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.searchByIdToolStripButton.Name = "searchByIdToolStripButton";
-            this.searchByIdToolStripButton.Size = new System.Drawing.Size(68, 22);
-            this.searchByIdToolStripButton.Text = "searchById";
-            this.searchByIdToolStripButton.Click += new System.EventHandler(this.searchByIdToolStripButton_Click);
             // 
             // RegisterSupplier
             // 
@@ -484,11 +484,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingNavigator)).EndInit();
             this.supplierBindingNavigator.ResumeLayout(false);
             this.supplierBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventory_controlDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierDataGridView)).EndInit();
             this.searchByIdToolStrip.ResumeLayout(false);
             this.searchByIdToolStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventory_controlDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

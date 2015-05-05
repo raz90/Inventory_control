@@ -39,3 +39,6 @@ C:\Users\Re\Documents\GitHub\Inventory_control\Inventory_control\obj\Debug\Inven
 C:\Users\Re\Documents\GitHub\Inventory_control\Inventory_control\obj\Debug\Inventory_control.RegisterSupplier.resources
 C:\Users\Re\Documents\GitHub\Inventory_control\Inventory_control\obj\Debug\Inventory_control.UserRegister.resources
 C:\Users\Re\Documents\GitHub\Inventory_control\Inventory_control\obj\Debug\Inventory_control.csproj.GenerateResource.Cache
+C:\Users\Re\Documents\GitHub\Inventory_control\Inventory_control\obj\Debug\Inventory_control.mainMenu.resources
+C:\Users\Re\Documents\GitHub\Inventory_control\Inventory_control\obj\Debug\Inventory_control.ProductReg.resources
+C:\Users\Re\Documents\GitHub\Inventory_control\Inventory_control\obj\Debug\Inventory_control.csprojResolveAssemblyReference.cache

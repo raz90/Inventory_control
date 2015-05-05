@@ -37,12 +37,12 @@ namespace Inventory_control
                 string pass= password_box.Password;
 
                 //string querySelect = 
-                MySqlCommand comd = new MySqlCommand("Select * from user where username ='" + this.username_box.Text + "'and password ='" +pass+ "';", conn);
+                MySqlCommand comd = new MySqlCommand("Select usertype from user where username ='" + this.username_box.Text + "'and password ='" +pass+ "';", conn);
 
                 MySqlDataReader myReader;
 
-
-
+                
+                
                 conn.Open();
                 myReader = comd.ExecuteReader();
                 int count = 0;
@@ -53,10 +53,13 @@ namespace Inventory_control
                 }
                 if (count == 1)
                 {
-                    mainPage page;
-                    page = new mainPage();
+                    username getUser = new username();
+                    getUser.checkUsr =myReader["usertype"].ToString();
+                    MessageBox.Show(getUser.checkUsr);
+                    mainMenu page;
+                    page = new mainMenu();
 
-                    page.Show();
+                    page.ShowDialog();
 
                     this.Close();
 

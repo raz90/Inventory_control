@@ -72,6 +72,18 @@
       <DependentUpon>inventory_controlDataSet.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="mainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainMenu.Designer.cs">
+      <DependentUpon>mainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductReg.Designer.cs">
+      <DependentUpon>ProductReg.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegisterCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +96,7 @@
     <Compile Include="RegisterSupplier.Designer.cs">
       <DependentUpon>RegisterSupplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="username.cs" />
     <Compile Include="UserRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +144,12 @@
     </Compile>
     <EmbeddedResource Include="CompanyRegister.resx">
       <DependentUpon>CompanyRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainMenu.resx">
+      <DependentUpon>mainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductReg.resx">
+      <DependentUpon>ProductReg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
